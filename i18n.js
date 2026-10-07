@@ -24,16 +24,16 @@ const I18N = {
     hero_badge_series: { th: 'มัธยมศึกษาปีที่ 4 • Critical Reading (อ่านวิเคราะห์)', en: 'Grade 10 (M.4) • Critical Reading' },
     hero_badge_twp: { th: 'สำนักพิมพ์ไทยวัฒนาพานิช (ทวพ) & WorldCom ELT', en: 'Thai Watana Panich & WorldCom ELT' },
     hero_title: {
-      th: 'แบบฝึกหัดพัฒนาทักษะการอ่านวิเคราะห์<br><span class="highlight-amber">Moving Up 1: Critical Reading</span>',
-      en: 'Analytical Reading Practice WebApp<br><span class="highlight-amber">Moving Up 1: Critical Reading</span>'
+      th: 'แบบฝึกหัดพัฒนาทักษะการอ่านวิเคราะห์',
+      en: 'Analytical Reading Practice WebApp'
     },
     hero_subtitle: {
       th: 'พัฒนาทักษะการคิดวิเคราะห์ การอ่านจับใจความ การเติมคำศัพท์ และการเรียงประโยคภาษาอังกฤษ',
       en: 'Empowering analytical thinking, comprehension, vocabulary mastery, and syntax structure.'
     },
     hero_desc: {
-      th: 'เว็บแอปพลิเคชันแบบฝึกหัดเสริมมาตรฐานใหม่ ครอบคลุม 10 บทเรียนเต็ม (150 ข้อ) รูปแบบ Interactive 3 พาร์ท พร้อมระบบคิดคะแนน 4 ระดับ แถบแนะนำชุดหนังสือ และรองรับการใช้งานออฟไลน์ 100%',
-      en: 'Interactive supplementary learning webapp featuring all 10 complete units (150 items), 3 rigorous parts, automated 4-tier assessment, bottom product showcase, and 100% offline support.'
+      th: '',
+      en: ''
     },
     hero_btn_enter: { th: 'เข้าสู่บทเรียนเพื่อเริ่มทำแบบฝึกหัด ➔', en: 'Enter Lessons & Exercises ➔' },
     hero_btn_start: { th: 'เริ่มบทเรียน Unit 1', en: 'Start Unit 1' },

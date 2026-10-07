@@ -1,7 +1,7 @@
 /**
  * ==============================================================================
  * Moving Up 1: Critical Reading (ม.4) - Master Exercise Dataset
- * Application Version: v1.0.0-marine (Book Code: MU-B1)
+ * Application Version: v1.0.5-marine (Book Code: MU-B1)
  * Publisher: สำนักพิมพ์ไทยวัฒนาพานิช (TWP) & WorldCom ELT
  * Author: Brady Fotheringham
  * ------------------------------------------------------------------------------
@@ -10,27 +10,91 @@
  */
 
 const APP_META = {
-  bookCode: 'MU-B1',
-  version: '1.0.4',
-  buildTag: 'v1.0.4-marine',
-  title: 'Moving Up 1: Critical Reading',
-  level: 'ชั้นมัธยมศึกษาปีที่ 4 (Grade 10)',
-  publisher: 'สำนักพิมพ์ไทยวัฒนาพานิช (ทวพ)',
-  themePrimary: '#003865',
-  themeAccent: '#f59e0b',
-  totalUnits: 10,
-  totalItems: 150
+  "bookCode": "MU-B1",
+  "version": "1.0.4",
+  "buildTag": "v1.0.4-marine",
+  "title": "Moving Up 1: Critical Reading",
+  "level": "ชั้นมัธยมศึกษาปีที่ 4 (Grade 10)",
+  "publisher": "สำนักพิมพ์ไทยวัฒนาพานิช (ทวพ)",
+  "themePrimary": "#003865",
+  "themeAccent": "#f59e0b",
+  "totalUnits": 10,
+  "totalItems": 150
 };
 
 const PRODUCT_COVERS = [
-  { id: 'mu1', title: 'Moving Up 1: Critical Reading', level: 'ม.4 (Grade 10)', series: 'Moving Up', image: 'assets/images/covers/mu1.jpg', tag: 'เล่มปัจจุบัน' },
-  { id: 'mu2', title: 'Moving Up 2: Critical Reading', level: 'ม.5 (Grade 11)', series: 'Moving Up', image: 'assets/images/covers/mu2.jpg', tag: 'เล่มถัดไป' },
-  { id: 'nw1', title: 'NEW Weaving It Together 1', level: 'ม.4 (Grade 10)', series: 'New Weaving', image: 'assets/images/covers/nw1.jpg', tag: 'Bestseller' },
-  { id: 'nw2', title: 'NEW Weaving It Together 2', level: 'ม.5 (Grade 11)', series: 'New Weaving', image: 'assets/images/covers/nw2.jpg', tag: 'Bestseller' },
-  { id: 'nw3', title: 'NEW Weaving It Together 3', level: 'ม.6 (Grade 12)', series: 'New Weaving', image: 'assets/images/covers/nw3.jpg', tag: 'Bestseller' },
-  { id: 'step1', title: 'Step Up 1: Reading & Writing', level: 'ม.1 (Grade 7)', series: 'Step Up', image: 'assets/images/covers/step1.jpg', tag: 'หลักสูตรแกนกลาง' },
-  { id: 'step2', title: 'Step Up 2: Reading & Writing', level: 'ม.2 (Grade 8)', series: 'Step Up', image: 'assets/images/covers/step2.jpg', tag: 'หลักสูตรแกนกลาง' },
-  { id: 'step3', title: 'Step Up 3: Reading & Writing', level: 'ม.3 (Grade 9)', series: 'Step Up', image: 'assets/images/covers/step3.jpg', tag: 'หลักสูตรแกนกลาง' }
+  {
+    "id": "mu1",
+    "title": "Moving Up 1: Critical Reading",
+    "level": "ม.4 (Grade 10)",
+    "series": "Moving Up",
+    "image": "assets/images/covers/mu1.jpg",
+    "tag": "เล่มปัจจุบัน"
+  },
+  {
+    "id": "mu2",
+    "title": "Moving Up 2: Critical Reading",
+    "level": "ม.5 (Grade 11)",
+    "series": "Moving Up",
+    "image": "assets/images/covers/mu2.jpg",
+    "tag": "ม.5 เล่มถัดไป"
+  },
+  {
+    "id": "mu3",
+    "title": "Moving Up 3: Critical Reading",
+    "level": "ม.6 (Grade 12)",
+    "series": "Moving Up",
+    "image": "assets/images/covers/mu3.jpg",
+    "tag": "ม.6 เล่มจบ"
+  },
+  {
+    "id": "nw1",
+    "title": "NEW Weaving It Together 1",
+    "level": "ม.4 (Grade 10)",
+    "series": "New Weaving",
+    "image": "assets/images/covers/nw1.jpg",
+    "tag": "Bestseller"
+  },
+  {
+    "id": "nw2",
+    "title": "NEW Weaving It Together 2",
+    "level": "ม.5 (Grade 11)",
+    "series": "New Weaving",
+    "image": "assets/images/covers/nw2.jpg",
+    "tag": "Bestseller"
+  },
+  {
+    "id": "nw3",
+    "title": "NEW Weaving It Together 3",
+    "level": "ม.6 (Grade 12)",
+    "series": "New Weaving",
+    "image": "assets/images/covers/nw3.jpg",
+    "tag": "Bestseller"
+  },
+  {
+    "id": "step1",
+    "title": "Step Up 1: Reading & Writing",
+    "level": "ม.1 (Grade 7)",
+    "series": "Step Up",
+    "image": "assets/images/covers/step1.jpg",
+    "tag": "หลักสูตรแกนกลาง"
+  },
+  {
+    "id": "step2",
+    "title": "Step Up 2: Reading & Writing",
+    "level": "ม.2 (Grade 8)",
+    "series": "Step Up",
+    "image": "assets/images/covers/step2.jpg",
+    "tag": "หลักสูตรแกนกลาง"
+  },
+  {
+    "id": "step3",
+    "title": "Step Up 3: Reading & Writing",
+    "level": "ม.3 (Grade 9)",
+    "series": "Step Up",
+    "image": "assets/images/covers/step3.jpg",
+    "tag": "หลักสูตรแกนกลาง"
+  }
 ];
 
 const DEFAULT_EXERCISES = [
@@ -43,10 +107,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex1.jpg",
     "audio": "assets/audio/ex1.mp3",
     "timestamps": [
-      { "start": 0, "end": 26.0 },
-      { "start": 26.0, "end": 48.0 },
-      { "start": 48.0, "end": 67.2 },
-      { "start": 67.2, "end": 82.0 }
+      {
+        "start": 0,
+        "end": 26
+      },
+      {
+        "start": 26,
+        "end": 48
+      },
+      {
+        "start": 48,
+        "end": 67.2
+      },
+      {
+        "start": 67.2,
+        "end": 82
+      }
     ],
     "passage": [
       "When we read something online, we often think we are getting the complete story. However, two people can describe the same event in very different ways. They may choose different facts to include or use different words to describe what happened. This does not always mean that one person is lying. Sometimes, people simply see the same situation from different points of view.",
@@ -165,7 +241,7 @@ const DEFAULT_EXERCISES = [
           "may understand"
         ],
         "shuffledTokens": [
-          "in different ways",
+          "in different ways.",
           "may understand",
           "People",
           "the same event"
@@ -183,7 +259,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "people",
-          "tell a story",
+          "tell a story.",
           "Personal experiences",
           "how",
           "can affect"
@@ -201,7 +277,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "different sources",
-          "a clearer picture",
+          "a clearer picture.",
           "Reading",
           "you",
           "can give"
@@ -218,11 +294,10 @@ const DEFAULT_EXERCISES = [
           "Good readers"
         ],
         "shuffledTokens": [
-          "from",
-          "Good readers",
+          "personal opinions.",
           "can separate",
-          "personal opinions",
-          "facts"
+          "facts from",
+          "Good readers"
         ]
       },
       {
@@ -240,7 +315,7 @@ const DEFAULT_EXERCISES = [
           "understand",
           "Asking questions",
           "helps us",
-          "more clearly"
+          "more clearly."
         ]
       }
     ]
@@ -254,10 +329,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex2.jpg",
     "audio": "assets/audio/ex2.mp3",
     "timestamps": [
-      { "start": 0, "end": 21.5 },
-      { "start": 21.5, "end": 46.5 },
-      { "start": 46.5, "end": 65.5 },
-      { "start": 65.5, "end": 76.5 }
+      {
+        "start": 0,
+        "end": 21.5
+      },
+      {
+        "start": 21.5,
+        "end": 46.5
+      },
+      {
+        "start": 46.5,
+        "end": 65.5
+      },
+      {
+        "start": 65.5,
+        "end": 76.5
+      }
     ],
     "passage": [
       "When people buy food or drinks, they often look at the words on the front of the package. Some products use phrases such as “natural,” “low fat,” or “high in protein.” These words can make a product sound healthy. However, they do not always tell the whole story about what is inside the package.",
@@ -380,7 +467,7 @@ const DEFAULT_EXERCISES = [
           "can help",
           "Reading food labels",
           "make",
-          "better choices",
+          "better choices.",
           "you"
         ]
       },
@@ -398,7 +485,7 @@ const DEFAULT_EXERCISES = [
           "that looks healthy",
           "A product",
           "a lot of",
-          "sugar",
+          "sugar.",
           "may still contain"
         ]
       },
@@ -413,7 +500,7 @@ const DEFAULT_EXERCISES = [
           "buying a product"
         ],
         "shuffledTokens": [
-          "buying a product",
+          "buying a product.",
           "the ingredients",
           "should check",
           "before",
@@ -434,7 +521,7 @@ const DEFAULT_EXERCISES = [
           "provides",
           "about",
           "Nutrition information",
-          "a food product",
+          "a food product.",
           "useful details"
         ]
       },
@@ -448,7 +535,7 @@ const DEFAULT_EXERCISES = [
           "what people"
         ],
         "shuffledTokens": [
-          "decide to buy",
+          "decide to buy.",
           "can influence",
           "what people",
           "Colorful packaging"
@@ -465,10 +552,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex3.jpg",
     "audio": "assets/audio/ex3.mp3",
     "timestamps": [
-      { "start": 0, "end": 22.5 },
-      { "start": 22.5, "end": 42.8 },
-      { "start": 42.8, "end": 58.5 },
-      { "start": 58.5, "end": 78.5 }
+      {
+        "start": 0,
+        "end": 22.5
+      },
+      {
+        "start": 22.5,
+        "end": 42.8
+      },
+      {
+        "start": 42.8,
+        "end": 58.5
+      },
+      {
+        "start": 58.5,
+        "end": 78.5
+      }
     ],
     "passage": [
       "Many people put empty plastic bottles into recycling bins, but what happens to them next? Recycling a plastic bottle involves several steps before the material can be used again. The process begins when recycling trucks collect bottles and other recyclable waste from homes, schools, and public places.",
@@ -587,7 +686,7 @@ const DEFAULT_EXERCISES = [
           "in the environment"
         ],
         "shuffledTokens": [
-          "in the environment",
+          "in the environment.",
           "Recycling",
           "plastic waste",
           "helps reduce"
@@ -606,7 +705,7 @@ const DEFAULT_EXERCISES = [
           "at",
           "Different types of waste",
           "are separated",
-          "recycling centers"
+          "recycling centers."
         ]
       },
       {
@@ -622,7 +721,7 @@ const DEFAULT_EXERCISES = [
           "can be used",
           "Recycled materials",
           "to create",
-          "new products"
+          "new products."
         ]
       },
       {
@@ -638,7 +737,7 @@ const DEFAULT_EXERCISES = [
           "animals and",
           "can harm",
           "Plastic waste",
-          "the environment"
+          "the environment."
         ]
       },
       {
@@ -654,7 +753,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "the need",
           "to produce",
-          "new plastic",
+          "new plastic.",
           "can reduce",
           "Recycling"
         ]
@@ -670,10 +769,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex4.jpg",
     "audio": "assets/audio/ex4.mp3",
     "timestamps": [
-      { "start": 0, "end": 21.0 },
-      { "start": 21.0, "end": 39.5 },
-      { "start": 39.5, "end": 60.8 },
-      { "start": 60.8, "end": 77.0 }
+      {
+        "start": 0,
+        "end": 21
+      },
+      {
+        "start": 21,
+        "end": 39.5
+      },
+      {
+        "start": 39.5,
+        "end": 60.8
+      },
+      {
+        "start": 60.8,
+        "end": 77
+      }
     ],
     "passage": [
       "The Arctic is the region around the North Pole. Much of the Arctic Ocean is covered by sea ice, especially during the winter. However, as the Earth becomes warmer, more of this ice melts during the summer. Higher temperatures also make it more difficult for the ice to grow back during the colder months.",
@@ -796,7 +907,7 @@ const DEFAULT_EXERCISES = [
           "Arctic ice",
           "Rising temperatures",
           "cause",
-          "more rapidly",
+          "more rapidly.",
           "to disappear"
         ]
       },
@@ -812,7 +923,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "can affect",
-          "Arctic animals",
+          "Arctic animals.",
           "The loss of",
           "the survival of",
           "sea ice"
@@ -830,7 +941,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "absorbs",
           "more energy",
-          "from the sun",
+          "from the sun.",
           "Dark ocean water"
         ]
       },
@@ -844,7 +955,7 @@ const DEFAULT_EXERCISES = [
           "ice melting"
         ],
         "shuffledTokens": [
-          "ice melting",
+          "ice melting.",
           "Warmer oceans",
           "can increase",
           "the speed of"
@@ -860,7 +971,7 @@ const DEFAULT_EXERCISES = [
           "to survive"
         ],
         "shuffledTokens": [
-          "to survive",
+          "to survive.",
           "cold environments",
           "depend on",
           "Many Arctic animals"
@@ -877,10 +988,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex5.jpg",
     "audio": "assets/audio/ex5.mp3",
     "timestamps": [
-      { "start": 0, "end": 26.0 },
-      { "start": 26.0, "end": 49.5 },
-      { "start": 49.5, "end": 69.5 },
-      { "start": 69.5, "end": 88.0 }
+      {
+        "start": 0,
+        "end": 26
+      },
+      {
+        "start": 26,
+        "end": 49.5
+      },
+      {
+        "start": 49.5,
+        "end": 69.5
+      },
+      {
+        "start": 69.5,
+        "end": 88
+      }
     ],
     "passage": [
       "Living in a city and living in the countryside can offer very different experiences. Cities are usually crowded and busy, with large populations, tall buildings, and many forms of public transportation. In contrast, the countryside generally has fewer people, more open spaces, and a quieter environment. Both places can be enjoyable, but they suit different lifestyles.",
@@ -1004,7 +1127,7 @@ const DEFAULT_EXERCISES = [
           "City residents",
           "to shops",
           "usually have",
-          "and public services"
+          "and public services."
         ]
       },
       {
@@ -1020,7 +1143,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "a more",
           "peaceful",
-          "atmosphere",
+          "atmosphere.",
           "Rural areas",
           "often provide"
         ]
@@ -1036,7 +1159,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "is generally",
-          "in large cities",
+          "in large cities.",
           "more available",
           "Public transportation"
         ]
@@ -1056,7 +1179,7 @@ const DEFAULT_EXERCISES = [
           "Cities",
           "of entertainment",
           "usually offer",
-          "and activities"
+          "and activities."
         ]
       },
       {
@@ -1070,7 +1193,7 @@ const DEFAULT_EXERCISES = [
           "lifestyle"
         ],
         "shuffledTokens": [
-          "lifestyle",
+          "lifestyle.",
           "to live",
           "depends on",
           "The best place",
@@ -1088,10 +1211,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex6.jpg",
     "audio": "assets/audio/ex6.mp3",
     "timestamps": [
-      { "start": 0, "end": 22.5 },
-      { "start": 22.5, "end": 46.2 },
-      { "start": 46.2, "end": 67.5 },
-      { "start": 67.5, "end": 86.5 }
+      {
+        "start": 0,
+        "end": 22.5
+      },
+      {
+        "start": 22.5,
+        "end": 46.2
+      },
+      {
+        "start": 46.2,
+        "end": 67.5
+      },
+      {
+        "start": 67.5,
+        "end": 86.5
+      }
     ],
     "passage": [
       "When you enter a café, you may notice more than the smell of coffee. Some cafés have comfortable chairs, soft lighting, quiet music, and free Wi-Fi. These details are not always chosen by accident. Café owners often think carefully about how the space makes customers feel.",
@@ -1214,7 +1349,7 @@ const DEFAULT_EXERCISES = [
           "customers",
           "to stay",
           "Comfortable furniture",
-          "longer",
+          "longer.",
           "can encourage"
         ]
       },
@@ -1230,7 +1365,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "can create",
-          "atmosphere",
+          "atmosphere.",
           "a more",
           "Soft music",
           "relaxing"
@@ -1249,7 +1384,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "a space",
           "feel more active",
-          "and energetic",
+          "and energetic.",
           "can make",
           "Bright lighting"
         ]
@@ -1267,7 +1402,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "often design",
           "their spaces",
-          "customer behavior",
+          "customer behavior.",
           "Businesses",
           "to influence"
         ]
@@ -1286,7 +1421,7 @@ const DEFAULT_EXERCISES = [
           "Small details",
           "on",
           "can have",
-          "our decisions",
+          "our decisions.",
           "a powerful effect"
         ]
       }
@@ -1301,10 +1436,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex7.jpg",
     "audio": "assets/audio/ex7.mp3",
     "timestamps": [
-      { "start": 0, "end": 31.5 },
-      { "start": 31.5, "end": 56.5 },
-      { "start": 56.5, "end": 77.2 },
-      { "start": 77.2, "end": 97.5 }
+      {
+        "start": 0,
+        "end": 31.5
+      },
+      {
+        "start": 31.5,
+        "end": 56.5
+      },
+      {
+        "start": 56.5,
+        "end": 77.2
+      },
+      {
+        "start": 77.2,
+        "end": 97.5
+      }
     ],
     "passage": [
       "Advertisements are everywhere. We see them on websites, social media, television, and even on the streets. Companies use advertisements to introduce their products, but they also carefully choose words that make those products sound attractive. Words such as “amazing,” “perfect,” and “new” can create a positive feeling, even when they do not give us much information about the product.",
@@ -1425,7 +1572,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "positive language",
-          "customers",
+          "customers.",
           "to attract",
           "often use",
           "Advertisements"
@@ -1446,7 +1593,7 @@ const DEFAULT_EXERCISES = [
           "seem",
           "can make",
           "an ordinary product",
-          "more special"
+          "more special."
         ]
       },
       {
@@ -1462,7 +1609,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "carefully choose",
           "words to make",
-          "sound attractive",
+          "sound attractive.",
           "Companies",
           "their products"
         ]
@@ -1480,7 +1627,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "carefully",
           "should think",
-          "advertisements",
+          "advertisements.",
           "before trusting",
           "Customers"
         ]
@@ -1499,7 +1646,7 @@ const DEFAULT_EXERCISES = [
           "make customers",
           "Some advertisements",
           "they",
-          "need to act quickly",
+          "need to act quickly.",
           "feel like"
         ]
       }
@@ -1514,10 +1661,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex8.jpg",
     "audio": "assets/audio/ex8.mp3",
     "timestamps": [
-      { "start": 0, "end": 25.0 },
-      { "start": 25.0, "end": 46.0 },
-      { "start": 46.0, "end": 63.8 },
-      { "start": 63.8, "end": 80.0 }
+      {
+        "start": 0,
+        "end": 25
+      },
+      {
+        "start": 25,
+        "end": 46
+      },
+      {
+        "start": 46,
+        "end": 63.8
+      },
+      {
+        "start": 63.8,
+        "end": 80
+      }
     ],
     "passage": [
       "Many students believe that studying for several hours without stopping will help them learn more. However, working for too long can make it difficult to concentrate. After spending a long time on the same task, you may become tired, lose focus, and find it harder to remember information.",
@@ -1638,7 +1797,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "can help",
-          "maintain their focus",
+          "maintain their focus.",
           "students",
           "Taking",
           "regular breaks"
@@ -1657,7 +1816,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "Studying",
-          "information",
+          "information.",
           "may make it",
           "to remember",
           "for too long",
@@ -1676,7 +1835,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "unnecessary distractions",
-          "studying",
+          "studying.",
           "while",
           "Students",
           "should avoid"
@@ -1697,7 +1856,7 @@ const DEFAULT_EXERCISES = [
           "enough time",
           "to rest",
           "should include",
-          "and recover"
+          "and recover."
         ]
       },
       {
@@ -1714,7 +1873,7 @@ const DEFAULT_EXERCISES = [
           "studying",
           "Managing your time",
           "wisely",
-          "more effective",
+          "more effective.",
           "can make"
         ]
       }
@@ -1729,10 +1888,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex9.jpg",
     "audio": "assets/audio/ex9.mp3",
     "timestamps": [
-      { "start": 0, "end": 24.5 },
-      { "start": 24.5, "end": 46.5 },
-      { "start": 46.5, "end": 66.5 },
-      { "start": 66.5, "end": 85.5 }
+      {
+        "start": 0,
+        "end": 24.5
+      },
+      {
+        "start": 24.5,
+        "end": 46.5
+      },
+      {
+        "start": 46.5,
+        "end": 66.5
+      },
+      {
+        "start": 66.5,
+        "end": 85.5
+      }
     ],
     "passage": [
       "Sleep is important for everyone, but it is especially important for teenagers. During the teenage years, the body and brain are still developing. Because of this, teenagers generally need more sleep than adults. Getting enough rest helps them stay alert and prepare for the next day.",
@@ -1855,7 +2026,7 @@ const DEFAULT_EXERCISES = [
           "your",
           "Getting enough sleep",
           "concentration",
-          "at school",
+          "at school.",
           "can improve"
         ]
       },
@@ -1874,7 +2045,7 @@ const DEFAULT_EXERCISES = [
           "can make",
           "you feel",
           "Staying up late",
-          "the next day"
+          "the next day."
         ]
       },
       {
@@ -1888,7 +2059,7 @@ const DEFAULT_EXERCISES = [
           "and energy"
         ],
         "shuffledTokens": [
-          "and energy",
+          "and energy.",
           "your mood",
           "can affect",
           "A lack of",
@@ -1907,7 +2078,7 @@ const DEFAULT_EXERCISES = [
         "shuffledTokens": [
           "can improve",
           "Healthy sleep habits",
-          "daily performance",
+          "daily performance.",
           "your"
         ]
       },
@@ -1922,7 +2093,7 @@ const DEFAULT_EXERCISES = [
           "feel better"
         ],
         "shuffledTokens": [
-          "feel better",
+          "feel better.",
           "can help",
           "teenagers",
           "a regular sleep routine",
@@ -1940,10 +2111,22 @@ const DEFAULT_EXERCISES = [
     "cover": "assets/images/ex10.jpg",
     "audio": "assets/audio/ex10.mp3",
     "timestamps": [
-      { "start": 0, "end": 29.5 },
-      { "start": 29.5, "end": 55.8 },
-      { "start": 55.8, "end": 77.5 },
-      { "start": 77.5, "end": 98.5 }
+      {
+        "start": 0,
+        "end": 29.5
+      },
+      {
+        "start": 29.5,
+        "end": 55.8
+      },
+      {
+        "start": 55.8,
+        "end": 77.5
+      },
+      {
+        "start": 77.5,
+        "end": 98.5
+      }
     ],
     "passage": [
       "Fashion trends can change very quickly. Many clothing companies produce large amounts of inexpensive clothes so customers can regularly buy new styles. This is known as fast fashion. It allows people to follow new trends without spending too much money, but these low prices can come with other costs.",
@@ -2065,7 +2248,7 @@ const DEFAULT_EXERCISES = [
           "clothing",
           "is cheap and trendy",
           "Fast fashion",
-          "produced quickly"
+          "produced quickly."
         ]
       },
       {
@@ -2079,7 +2262,7 @@ const DEFAULT_EXERCISES = [
           "resources"
         ],
         "shuffledTokens": [
-          "resources",
+          "resources.",
           "natural",
           "uses",
           "a large amount of",
@@ -2098,7 +2281,7 @@ const DEFAULT_EXERCISES = [
         ],
         "shuffledTokens": [
           "Cheap clothing",
-          "more often",
+          "more often.",
           "people",
           "may encourage",
           "to shop"
@@ -2115,7 +2298,7 @@ const DEFAULT_EXERCISES = [
           "waste"
         ],
         "shuffledTokens": [
-          "waste",
+          "waste.",
           "can help",
           "Choosing",
           "second-hand clothes",
@@ -2132,7 +2315,7 @@ const DEFAULT_EXERCISES = [
           "environmental impact"
         ],
         "shuffledTokens": [
-          "environmental impact",
+          "environmental impact.",
           "Small changes",
           "can have",
           "a positive"
@@ -2142,6 +2325,7 @@ const DEFAULT_EXERCISES = [
   }
 ];
 
+// Universal Export
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { APP_META, PRODUCT_COVERS, DEFAULT_EXERCISES };
 }

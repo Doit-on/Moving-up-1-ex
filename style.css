@@ -1140,9 +1140,21 @@ body.banner-collapsed {
 }
 
 .mcq-option-card.is-wrong {
-  background: var(--danger-bg) !important;
-  border-color: var(--danger) !important;
-  color: #991b1b !important;
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #dc2626 !important;
+  font-weight: 700;
+}
+
+.mcq-option-card.is-wrong .mcq-opt-marker {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+.mcq-option-card.is-wrong .mcq-opt-text {
+  color: #b91c1c !important;
+  font-weight: 700;
 }
 
 .mcq-explanation-box {
@@ -1249,6 +1261,30 @@ body.banner-collapsed {
   background: #e0f2fe;
 }
 
+.wb-slot-blank.is-wrong {
+  background: #fee2e2 !important;
+  border-bottom: 3px solid #dc2626 !important;
+  color: #dc2626 !important;
+  font-weight: 700 !important;
+}
+
+.wb-slot-blank.is-wrong span {
+  color: #dc2626 !important;
+  font-weight: 700 !important;
+}
+
+.wb-slot-blank.is-correct {
+  background: #ecfdf5 !important;
+  border-bottom: 3px solid #059669 !important;
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+.wb-slot-blank.is-correct span {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
 .wb-slot-remove {
   margin-left: auto;
   color: var(--danger);
@@ -1335,6 +1371,30 @@ body.banner-collapsed {
   background: linear-gradient(135deg, var(--marine-primary), var(--marine-vibrant));
   color: #ffffff;
   border-color: var(--marine-primary);
+}
+
+.target-drop-zone.is-wrong {
+  border: 2.5px dashed #ef4444 !important;
+  background: #fef2f2 !important;
+}
+
+.target-drop-zone.is-wrong .token-card.in-drop-zone {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1.5px solid #ef4444 !important;
+  font-weight: 700 !important;
+}
+
+.target-drop-zone.is-correct {
+  border: 2.5px dashed #10b981 !important;
+  background: #ecfdf5 !important;
+}
+
+.target-drop-zone.is-correct .token-card.in-drop-zone {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #059669 !important;
+  font-weight: 700 !important;
 }
 
 /* ============================================================

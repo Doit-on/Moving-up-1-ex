@@ -536,10 +536,16 @@ const App = {
 
       const optsHtml = q.options.map((opt, oi) => {
         let stateClass = '';
+        let badgeHtml = '';
         if (selected === oi) stateClass += ' selected';
         if (isSubmitted || showKey) {
-          if (oi === q.answer) stateClass += ' is-correct';
-          else if (selected === oi && oi !== q.answer) stateClass += ' is-wrong';
+          if (oi === q.answer) {
+            stateClass += ' is-correct';
+            badgeHtml = `<span style="margin-left:auto; color:var(--success); font-weight:700; font-size:0.85rem;">✅ คำตอบที่ถูกต้อง</span>`;
+          } else if (selected === oi && oi !== q.answer) {
+            stateClass += ' is-wrong';
+            badgeHtml = `<span style="margin-left:auto; color:#dc2626; font-weight:700; font-size:0.85rem;">❌ คุณตอบข้อนี้ (ไม่ถูกต้อง)</span>`;
+          }
         }
 
         const markerLetter = String.fromCharCode(65 + oi);
@@ -548,9 +554,19 @@ const App = {
           <div class="mcq-option-card ${stateClass}" onclick="App.selectOptionA(${q.id}, ${oi})">
             <span class="mcq-opt-marker">${markerLetter}</span>
             <span class="mcq-opt-text">${opt}</span>
+            ${badgeHtml}
           </div>
         `;
       }).join('');
+
+      let statusBadge = '';
+      if (isSubmitted || showKey) {
+        if (selected === q.answer) {
+          statusBadge = `<span style="color:var(--success); font-weight:700; font-size:0.85rem; margin-left:8px;">✅ ถูกต้อง (1/1 คะแนน)</span>`;
+        } else {
+          statusBadge = `<span style="color:#dc2626; font-weight:700; font-size:0.85rem; margin-left:8px;">❌ ไม่ถูกต้อง (0/1 คะแนน)</span>`;
+        }
+      }
 
       const expHtml = (isSubmitted || showKey)
         ? `<div class="mcq-explanation-box">💡 <strong>คำอธิบาย:</strong> ${q.explanation}</div>`
@@ -558,7 +574,7 @@ const App = {
 
       return `
         <div class="mcq-item">
-          <div class="mcq-q-text"><strong>${q.id}.</strong> ${q.question}</div>
+          <div class="mcq-q-text"><strong>${q.id}.</strong> ${q.question} ${statusBadge}</div>
           <div class="mcq-options-list">${optsHtml}</div>
           ${expHtml}
         </div>
@@ -633,9 +649,15 @@ const App = {
       const isActive = AppState.partBActiveSlot === idx;
 
       let feedbackClass = '';
+      let statusText = '';
       if (isSubmitted || showKey) {
-        if (userWord.toLowerCase() === q.answer.toLowerCase()) feedbackClass = 'is-correct';
-        else feedbackClass = 'is-wrong';
+        if (userWord.toLowerCase() === q.answer.toLowerCase()) {
+          feedbackClass = 'is-correct';
+          statusText = `<span style="color:var(--success); font-weight:700; font-size:0.85rem; margin-left:6px;">✅ ถูกต้อง</span>`;
+        } else {
+          feedbackClass = 'is-wrong';
+          statusText = `<span style="color:#dc2626; font-weight:700; font-size:0.85rem; margin-left:6px;">❌ ไม่ถูกต้อง</span>`;
+        }
       }
 
       const blankContent = userWord
@@ -644,11 +666,13 @@ const App = {
 
       const parts = q.sentence.split('__________');
       const sentenceHtml = parts.length === 2
-        ? `${parts[0]} <span class="wb-slot-blank ${isActive ? 'active-target' : ''} ${userWord ? 'filled' : ''} ${feedbackClass}" onclick="App.selectSlotB(${idx})">${blankContent}</span> ${parts[1]}`
+        ? `${parts[0]} <span class="wb-slot-blank ${isActive ? 'active-target' : ''} ${userWord ? 'filled' : ''} ${feedbackClass}" onclick="App.selectSlotB(${idx})">${blankContent}</span> ${parts[1]} ${statusText}`
         : q.sentence;
 
       const keyNote = (isSubmitted || showKey)
-        ? `<div style="font-size:0.8rem; color:var(--success); margin-top:4px;">เฉลย: <strong>${q.answer}</strong></div>`
+        ? (feedbackClass === 'is-wrong'
+            ? `<div style="font-size:0.85rem; color:#dc2626; font-weight:600; margin-top:6px;">❌ คำตอบยังไม่ถูกต้อง (คำตอบที่ถูกคือ: <strong style="color:var(--success); font-size:0.95rem;">${q.answer}</strong>)</div>`
+            : `<div style="font-size:0.85rem; color:var(--success); font-weight:600; margin-top:6px;">✅ คำตอบถูกต้อง: <strong>${q.answer}</strong></div>`)
         : '';
 
       return `
@@ -763,20 +787,37 @@ const App = {
       }).join('');
 
       let feedbackClass = '';
+      let isCorrect = false;
       if (isSubmitted || showKey) {
         const assembledStr = placedTexts.join(' ').trim().replace(/[.!?,]$/, '').toLowerCase();
         const targetClean = item.target.trim().replace(/[.!?,]$/, '').toLowerCase();
-        if (assembledStr === targetClean) feedbackClass = 'is-correct';
-        else feedbackClass = 'is-wrong';
+        if (assembledStr === targetClean) {
+          feedbackClass = 'is-correct';
+          isCorrect = true;
+        } else {
+          feedbackClass = 'is-wrong';
+          isCorrect = false;
+        }
+      }
+
+      let statusBadgeC = '';
+      if (isSubmitted || showKey) {
+        statusBadgeC = isCorrect
+          ? `<span style="color:var(--success); font-weight:700; font-size:0.85rem; margin-left:8px;">✅ ถูกต้อง (1/1 คะแนน)</span>`
+          : `<span style="color:#dc2626; font-weight:700; font-size:0.85rem; margin-left:8px;">❌ ไม่ถูกต้อง (0/1 คะแนน)</span>`;
       }
 
       const keyNote = (isSubmitted || showKey)
-        ? `<div style="font-size:0.85rem; color:var(--success); margin-top:8px;">เฉลย: <strong>${item.target}</strong></div>`
+        ? (isCorrect
+            ? `<div style="font-size:0.9rem; color:var(--success); font-weight:700; margin-top:8px;">✅ เรียงประโยคถูกต้องสมบูรณ์ (1/1 คะแนน)</div>
+               <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">เฉลย: <strong style="color:var(--marine-deep); font-size:0.95rem;">${item.target}</strong></div>`
+            : `<div style="font-size:0.9rem; color:#dc2626; font-weight:700; margin-top:8px;">❌ เรียงประโยคยังไม่ถูกต้อง (0/1 คะแนน)</div>
+               <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">เฉลย: <strong style="color:var(--success); font-size:0.95rem;">${item.target}</strong></div>`)
         : '';
 
       return `
         <div class="unscramble-item">
-          <div class="unscramble-q-num">ข้อ ${item.id}</div>
+          <div class="unscramble-q-num">ข้อ ${item.id} ${statusBadgeC}</div>
           <div class="target-drop-zone ${placedTokens.length === 0 ? 'placeholder-empty' : ''} ${feedbackClass}">
             ${dropZoneTokensHtml}
           </div>
